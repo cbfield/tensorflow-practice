@@ -9,8 +9,8 @@ class TestTensor(unittest.TestCase):
     def test_healthcheck(self):
         check = tensor.healthcheck()
         self.assertIsInstance(check,dict)
-        self.assertTrue('statusCode' in check.keys())
-        self.assertTrue('message' in check.keys())
+        self.assertIn('statusCode',check.keys())
+        self.assertIn('message',check.keys())
         self.assertEqual(check['statusCode'],200)
         self.assertEqual(check['message'],'200 OK')
 
